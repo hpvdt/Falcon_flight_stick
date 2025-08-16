@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "flight_stick_footprints")(type "KiCad")(uri "${KIPRJMOD}/flight_stick_footprints.pretty")(options "")(descr ""))
+)
