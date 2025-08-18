@@ -2,7 +2,7 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid "4c9d0b28-3077-4679-8e8f-b48f023ab7ed")
+	(uuid "8f0d80d3-5d17-41e2-95eb-31f2b1152b81")
 	(paper "A5")
 	(lib_symbols
 		(symbol "Device:C"
@@ -1539,6 +1539,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "POWER DISTRIBUTION"
+		(exclude_from_sim no)
+		(at 109.728 21.336 0)
+		(effects
+			(font
+				(size 5.08 5.08)
+			)
+		)
+		(uuid "046df61d-d210-4b1a-b79c-533813837694")
+	)
 	(junction
 		(at 95.25 85.09)
 		(diameter 0)
@@ -2037,50 +2047,6 @@
 		)
 		(uuid "8a924e35-19c2-4e6b-8995-73ed7ee69185")
 	)
-	(global_label "+5V"
-		(shape input)
-		(at 41.91 53.34 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "2be43d87-dc6d-4a63-b27c-cbdb69e72c01")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.91 46.3892 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "+5V"
-		(shape input)
-		(at 166.37 45.72 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "34c5b628-8f8e-467e-b58e-e9e570028dc8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 166.37 38.7692 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(hierarchical_label "PWR_SLEEP"
 		(shape input)
 		(at 87.63 60.96 180)
@@ -2091,6 +2057,72 @@
 			(justify right)
 		)
 		(uuid "34ded6c6-e599-452a-a732-542c69138573")
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 41.91 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "07c153ad-966f-4db7-9df3-0fb9d84705aa")
+		(property "Reference" "#PWR012"
+			(at 41.91 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 41.91 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 41.91 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 41.91 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 41.91 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8580176b-d11e-439f-b8b8-fb890efcf43b")
+		)
+		(instances
+			(project "flight_stick"
+				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/bc2feb38-b1d3-42da-a90c-1ee53748a038"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "power:+3.3V")
@@ -2768,7 +2800,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 68.2752 73.66 0)
 			(effects
 				(font
@@ -2883,6 +2915,72 @@
 			(project "flight_stick"
 				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/bc2feb38-b1d3-42da-a90c-1ee53748a038"
 					(reference "D8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 166.37 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7a8d91b1-8f33-4d74-b08f-c3eb5ac0ae5f")
+		(property "Reference" "#PWR09"
+			(at 166.37 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 166.37 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 166.37 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 166.37 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 166.37 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7de3ee48-5390-480a-b037-bcc4cd523698")
+		)
+		(instances
+			(project ""
+				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/bc2feb38-b1d3-42da-a90c-1ee53748a038"
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
