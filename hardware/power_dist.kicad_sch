@@ -1545,16 +1545,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "<-Power Good!\n  Power BAD :( ->"
-		(exclude_from_sim no)
-		(at 132.334 64.77 0)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-		)
-		(uuid "3a45d6d4-37a9-49e0-8ec5-74829cea233d")
-	)
 	(junction
 		(at 91.44 78.74)
 		(diameter 0)
@@ -1566,12 +1556,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "15a75a81-638e-4e44-8b3e-cb0e3d2a094d")
-	)
-	(junction
-		(at 132.08 59.69)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2f5f94fd-ff0c-4c64-a08f-20684753e34d")
 	)
 	(junction
 		(at 93.98 78.74)
@@ -1586,10 +1570,10 @@
 		(uuid "521035a7-5b66-4783-ba7f-f35eb3c7e227")
 	)
 	(junction
-		(at 132.08 71.12)
+		(at 132.08 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5d44e534-75c9-4cdf-9b5b-45a9ac99620a")
+		(uuid "6c8fdfeb-6454-4c7e-b710-468a422e6b5b")
 	)
 	(junction
 		(at 81.28 46.99)
@@ -1608,6 +1592,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "94a54947-2c7d-4953-993e-ff8b18852c09")
+	)
+	(junction
+		(at 132.08 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a91ff7f4-4651-4b81-aa6d-42bb4fee4265")
 	)
 	(junction
 		(at 111.76 46.99)
@@ -1661,16 +1651,6 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 71.12) (xy 121.92 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "083883de-3bd7-431d-b638-4d847d52e653")
-	)
-	(wire
-		(pts
 			(xy 88.9 78.74) (xy 91.44 78.74)
 		)
 		(stroke
@@ -1681,13 +1661,13 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 46.99) (xy 132.08 46.99)
+			(xy 123.19 60.96) (xy 132.08 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0c776e52-a0a5-4d10-b313-87287eb534b8")
+		(uuid "0f58a4e2-bb90-4dcf-905f-ed2b37dda2a4")
 	)
 	(wire
 		(pts
@@ -1698,16 +1678,6 @@
 			(type default)
 		)
 		(uuid "112b0166-8d21-4bf0-9e35-c473c298f447")
-	)
-	(wire
-		(pts
-			(xy 121.92 59.69) (xy 132.08 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1e343d22-596f-42cf-99b9-477f463afa1d")
 	)
 	(wire
 		(pts
@@ -1741,6 +1711,16 @@
 	)
 	(wire
 		(pts
+			(xy 132.08 60.96) (xy 132.08 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3cb547ae-72d5-4756-884a-93bcf14064d0")
+	)
+	(wire
+		(pts
 			(xy 57.15 34.29) (xy 57.15 33.02)
 		)
 		(stroke
@@ -1748,16 +1728,6 @@
 			(type default)
 		)
 		(uuid "46dd051d-fe41-4e4f-baa1-fd4fc136111f")
-	)
-	(wire
-		(pts
-			(xy 143.51 62.23) (xy 143.51 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "480b4f50-7bba-41ed-80b1-b9b079df6a02")
 	)
 	(wire
 		(pts
@@ -1791,27 +1761,17 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 71.12) (xy 143.51 71.12)
+			(xy 132.08 60.96) (xy 132.08 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "523f69f7-edb8-4cf0-919a-0c7cf9cd573f")
+		(uuid "5241617c-ab41-425e-bd68-dab4b7235dae")
 	)
 	(wire
 		(pts
-			(xy 143.51 69.85) (xy 143.51 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c569812-be1a-4467-95f3-8815c9e264e7")
-	)
-	(wire
-		(pts
-			(xy 104.14 78.74) (xy 161.29 78.74)
+			(xy 104.14 78.74) (xy 132.08 78.74)
 		)
 		(stroke
 			(width 0)
@@ -1828,16 +1788,6 @@
 			(type default)
 		)
 		(uuid "5eb01a44-2833-4275-b825-5b52cf26edf6")
-	)
-	(wire
-		(pts
-			(xy 143.51 59.69) (xy 132.08 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5fccd51b-1b8d-4676-9282-798834c8c266")
 	)
 	(wire
 		(pts
@@ -1901,13 +1851,23 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 71.12) (xy 132.08 74.93)
+			(xy 132.08 78.74) (xy 161.29 78.74)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ad31aa99-ed9d-4c23-961a-d95a59218fdf")
+		(uuid "83e63f9a-9f6c-47ac-af38-89f6357e7494")
+	)
+	(wire
+		(pts
+			(xy 132.08 77.47) (xy 132.08 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99522588-39a3-4272-92e8-936ab31265a3")
 	)
 	(wire
 		(pts
@@ -1918,6 +1878,16 @@
 			(type default)
 		)
 		(uuid "bab76c6e-e7ec-40ff-8974-7e0bc2fcf86f")
+	)
+	(wire
+		(pts
+			(xy 132.08 46.99) (xy 161.29 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca027e42-40ef-4f41-9f33-d52fd57aa831")
 	)
 	(wire
 		(pts
@@ -1991,16 +1961,6 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 71.12) (xy 121.92 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f9337fb3-d056-4f08-b087-dc5e854d84a7")
-	)
-	(wire
-		(pts
 			(xy 57.15 46.99) (xy 63.5 46.99)
 		)
 		(stroke
@@ -2031,7 +1991,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 52.07) (xy 132.08 46.99)
+			(xy 132.08 49.53) (xy 132.08 46.99)
 		)
 		(stroke
 			(width 0)
@@ -2070,7 +2030,7 @@
 		(uuid "1f80d196-deb5-4336-abea-2962c7acf277")
 	)
 	(label "sleep"
-		(at 160.02 46.99 180)
+		(at 151.13 46.99 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2090,14 +2050,14 @@
 		(uuid "7cfe0f61-85ae-4b58-b754-7066b42ad4c8")
 	)
 	(label "PG"
-		(at 132.08 74.93 180)
+		(at 123.19 60.96 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "8a924e35-19c2-4e6b-8995-73ed7ee69185")
+		(uuid "8c53d33e-a3c9-42ad-bb10-e3f301578fb7")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -2225,6 +2185,84 @@
 			(project "flight_stick"
 				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/bc2feb38-b1d3-42da-a90c-1ee53748a038"
 					(reference "#FLG05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 132.08 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "355e2dbd-2fbd-4f52-9eb6-1425effddd29")
+		(property "Reference" "R4"
+			(at 126.746 65.532 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "400"
+			(at 126.746 68.072 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 133.096 66.294 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 132.08 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 132.08 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C8218"
+			(at 132.08 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bdf432cd-b958-4f86-853d-9451f81e06e4")
+		)
+		(pin "2"
+			(uuid "82150680-7c79-487e-9159-1e0f15bacf5e")
+		)
+		(instances
+			(project "flight_stick"
+				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/bc2feb38-b1d3-42da-a90c-1ee53748a038"
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -2667,7 +2705,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 121.92 63.5 90)
+		(at 132.08 73.66 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2675,7 +2713,7 @@
 		(dnp no)
 		(uuid "a76ea9f0-6a58-45d9-a0f2-b8effdd43e19")
 		(property "Reference" "D1"
-			(at 117.602 62.992 90)
+			(at 127.762 73.152 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2684,7 +2722,7 @@
 			)
 		)
 		(property "Value" "GREEN_LED"
-			(at 110.49 66.294 90)
+			(at 120.65 76.454 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2693,7 +2731,7 @@
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
-			(at 121.92 63.5 0)
+			(at 132.08 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2702,7 +2740,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 121.92 63.5 0)
+			(at 132.08 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2711,7 +2749,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 121.92 63.5 0)
+			(at 132.08 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2720,7 +2758,7 @@
 			)
 		)
 		(property "LCSC" "C965818"
-			(at 121.92 63.5 0)
+			(at 132.08 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2955,7 +2993,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 132.08 55.88 0)
+		(at 132.08 53.34 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2963,7 +3001,7 @@
 		(dnp no)
 		(uuid "f6957a5e-573b-4928-8e9e-e2d6efe443a7")
 		(property "Reference" "R1"
-			(at 125.222 55.88 0)
+			(at 126.746 51.562 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2971,8 +3009,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1k"
-			(at 125.222 58.42 0)
+		(property "Value" "10k"
+			(at 126.746 54.102 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2981,7 +3019,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 133.096 56.134 90)
+			(at 133.096 53.594 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2990,7 +3028,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 132.08 55.88 0)
+			(at 132.08 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2999,7 +3037,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 132.08 55.88 0)
+			(at 132.08 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3008,7 +3046,7 @@
 			)
 		)
 		(property "LCSC" "C8218"
-			(at 132.08 55.88 0)
+			(at 132.08 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3026,84 +3064,6 @@
 			(project "flight_stick"
 				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/bc2feb38-b1d3-42da-a90c-1ee53748a038"
 					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 143.51 66.04 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "fcaea65e-b8de-49e3-abe5-5f6b1d70978c")
-		(property "Reference" "D2"
-			(at 150.368 67.31 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "RED_LED"
-			(at 153.416 63.5 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
-			(at 143.51 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 143.51 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 143.51 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C965818"
-			(at 143.51 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3b8a5804-2498-474f-b52b-a7fcc3adc2b6")
-		)
-		(pin "2"
-			(uuid "86a3f4ea-665f-4571-b1ae-1ba7b61db0ca")
-		)
-		(instances
-			(project "flight_stick"
-				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/bc2feb38-b1d3-42da-a90c-1ee53748a038"
-					(reference "D2")
 					(unit 1)
 				)
 			)

@@ -1069,16 +1069,6 @@
 		)
 		(uuid 98e089aa-f64d-4b0a-a9d6-4773c1687847)
 	)
-	(text "CAN IO"
-		(exclude_from_sim no)
-		(at 104.648 20.574 0)
-		(effects
-			(font
-				(size 5.08 5.08)
-			)
-		)
-		(uuid "59300b4d-ef90-40af-a456-5ea7f04da9b5")
-	)
 	(text "Daisy Chained \nCAN jumpers"
 		(exclude_from_sim no)
 		(at 174.752 70.358 0)
