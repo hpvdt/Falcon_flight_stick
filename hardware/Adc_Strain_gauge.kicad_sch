@@ -1518,16 +1518,6 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 59.69) (xy 60.96 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "39ba2750-592a-4483-a792-ef56c72f14dd")
-	)
-	(wire
-		(pts
 			(xy 144.78 77.47) (xy 144.78 78.74)
 		)
 		(stroke
@@ -1618,16 +1608,6 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 44.45) (xy 55.88 44.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "492d8385-f45d-4be1-a324-22538ff193d7")
-	)
-	(wire
-		(pts
 			(xy 77.47 76.2) (xy 77.47 86.36)
 		)
 		(stroke
@@ -1685,6 +1665,26 @@
 			(type default)
 		)
 		(uuid "51a7f978-0da1-4503-babe-c4011fe2b3cb")
+	)
+	(wire
+		(pts
+			(xy 55.88 58.42) (xy 55.88 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56926a46-686f-48e5-8e2a-d99fb1edf8fb")
+	)
+	(wire
+		(pts
+			(xy 55.88 59.69) (xy 52.07 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f20c6a5-b330-42ed-9944-9c45c1a95f7c")
 	)
 	(wire
 		(pts
@@ -1778,7 +1778,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 67.31) (xy 62.23 67.31)
+			(xy 52.07 67.31) (xy 54.61 67.31)
 		)
 		(stroke
 			(width 0)
@@ -3034,7 +3034,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 62.23 67.31 0)
+		(at 54.61 67.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3042,7 +3042,7 @@
 		(dnp no)
 		(uuid "64d03ee5-9adf-418d-9c38-b3cfd5b48c0d")
 		(property "Reference" "#PWR044"
-			(at 62.23 73.66 0)
+			(at 54.61 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3051,7 +3051,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 62.23 71.882 0)
+			(at 54.61 71.882 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3059,7 +3059,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 62.23 67.31 0)
+			(at 54.61 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3068,7 +3068,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 62.23 67.31 0)
+			(at 54.61 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3077,7 +3077,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 62.23 67.31 0)
+			(at 54.61 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3914,7 +3914,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 55.88 44.45 0)
+		(at 54.61 44.45 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3922,7 +3922,7 @@
 		(dnp no)
 		(uuid "eee700de-699a-48ff-a647-80689abf9f33")
 		(property "Reference" "#PWR041"
-			(at 55.88 50.8 0)
+			(at 54.61 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3931,7 +3931,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 51.816 46.482 0)
+			(at 50.546 46.482 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3939,7 +3939,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 55.88 44.45 0)
+			(at 54.61 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3948,7 +3948,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 55.88 44.45 0)
+			(at 54.61 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3957,7 +3957,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 55.88 44.45 0)
+			(at 54.61 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3979,7 +3979,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 60.96 59.69 0)
+		(at 55.88 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3987,7 +3987,7 @@
 		(dnp no)
 		(uuid "f6b79db1-690b-4dfc-a836-8e6f1fb28e7b")
 		(property "Reference" "#PWR042"
-			(at 60.96 63.5 0)
+			(at 55.88 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3996,7 +3996,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 57.404 57.912 0)
+			(at 52.324 56.642 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4004,7 +4004,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 60.96 59.69 0)
+			(at 55.88 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4013,7 +4013,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 60.96 59.69 0)
+			(at 55.88 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4022,7 +4022,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 60.96 59.69 0)
+			(at 55.88 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)

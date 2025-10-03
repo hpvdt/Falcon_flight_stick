@@ -3671,6 +3671,89 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Memory_EEPROM:AT24CS01-MAHM"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -6180,7 +6263,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 111.76) (xy 142.24 111.76)
+			(xy 107.95 111.76) (xy 140.97 111.76)
 		)
 		(stroke
 			(width 0)
@@ -6780,7 +6863,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 109.22) (xy 142.24 109.22)
+			(xy 107.95 109.22) (xy 140.97 109.22)
 		)
 		(stroke
 			(width 0)
@@ -6938,15 +7021,15 @@
 		)
 		(uuid "01855219-ee9f-4c11-9cb1-21d4a28c765c")
 	)
-	(label "MTX_COL4"
-		(at 140.97 119.38 180)
+	(label "COMPRT_TX"
+		(at 140.97 127 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "02ac16f5-bf47-4adb-ba5c-9b890b557cca")
+		(uuid "1778f98f-f87c-4ae7-919b-040e4dc126d3")
 	)
 	(label "MTX_COL5"
 		(at 214.63 95.25 180)
@@ -6978,25 +7061,15 @@
 		)
 		(uuid "1fcbc0c4-5544-40ac-ad2d-4c166ec1ad33")
 	)
-	(label "MTX_ROW4"
-		(at 39.37 157.48 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "25f6ec88-87bf-46c3-9bda-6f814d443f6a")
-	)
 	(label "MTX_COL3"
-		(at 140.97 116.84 180)
+		(at 140.97 111.76 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "30a58366-3130-46ad-8ebf-620a6514f672")
+		(uuid "2a927241-c189-4f20-928b-d7465ce175dc")
 	)
 	(label "USBN"
 		(at 193.04 43.18 0)
@@ -7048,15 +7121,25 @@
 		)
 		(uuid "3c18a602-9007-4282-8d6e-b32a21666d3b")
 	)
-	(label "MTX_ROW3"
-		(at 39.37 137.16 0)
+	(label "MTX_COL5"
+		(at 140.97 116.84 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
-		(uuid "453210b7-f2b3-4436-987d-9c7bd7402fc1")
+		(uuid "4d9d0abe-18f8-4f7d-826c-a10438bf3813")
+	)
+	(label "MTX_ROW2"
+		(at 140.97 121.92 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4dbb2c40-5ae5-467d-9c37-40fdc5c17b00")
 	)
 	(label "MTX_COL3"
 		(at 214.63 90.17 180)
@@ -7067,16 +7150,6 @@
 			(justify right bottom)
 		)
 		(uuid "5498b4aa-a800-4a92-a1f2-a0966ba95bd5")
-	)
-	(label "MTX_ROW5"
-		(at 39.37 160.02 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5c85b52b-c26d-4243-80d1-2d15fbfe4618")
 	)
 	(label "CAN_RX"
 		(at 39.37 152.4 0)
@@ -7107,6 +7180,16 @@
 			(justify right bottom)
 		)
 		(uuid "607b6c6c-123c-4397-960c-b0adea16c0d5")
+	)
+	(label "MTX_ROW1"
+		(at 140.97 119.38 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "659d056c-f98a-4b14-b754-3288261ab066")
 	)
 	(label "D+"
 		(at 222.25 46.99 0)
@@ -7158,7 +7241,7 @@
 		)
 		(uuid "6dda45ae-5d72-4f30-8b19-58c0e162a389")
 	)
-	(label "MTX_ROW2"
+	(label "MTX_ROW4"
 		(at 39.37 134.62 0)
 		(effects
 			(font
@@ -7166,7 +7249,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "70c7e7af-0b53-46d3-9364-1f75a0a2cb2b")
+		(uuid "745d19a5-851a-4923-b531-b5454e03c745")
 	)
 	(label "COMPRT_TX"
 		(at 179.07 55.88 180)
@@ -7177,6 +7260,16 @@
 			(justify right bottom)
 		)
 		(uuid "77779e9c-1941-4c71-bd3b-e024e8f6ab04")
+	)
+	(label "ADC_CS"
+		(at 39.37 157.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7a3210d4-ccaf-476b-90ef-af2789cd96c5")
 	)
 	(label "RGB_G"
 		(at 39.37 144.78 0)
@@ -7197,16 +7290,6 @@
 			(justify left bottom)
 		)
 		(uuid "8019b3ed-e8f7-4617-962f-fa6c192d298f")
-	)
-	(label "ADC_RST"
-		(at 140.97 129.54 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "801abbf1-f133-407e-bb63-3f1d3cc7fd23")
 	)
 	(label "ADC_MCO"
 		(at 176.53 121.92 0)
@@ -7258,6 +7341,16 @@
 		)
 		(uuid "88d52c54-27fd-4dc1-92bd-06fae82588a5")
 	)
+	(label "ADC_RST"
+		(at 39.37 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8a73f68a-5d85-4beb-bc92-928553e8a7ff")
+	)
 	(label "ADC_SCK"
 		(at 39.37 165.1 0)
 		(effects
@@ -7287,16 +7380,6 @@
 			(justify left bottom)
 		)
 		(uuid "91011c15-2a0c-4e8c-8de4-b6d4253f71bd")
-	)
-	(label "MTX_ROW1"
-		(at 39.37 132.08 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "93df3cc8-43d0-4d11-8d5e-d5dbf665b816")
 	)
 	(label "USBN"
 		(at 140.97 132.08 180)
@@ -7338,6 +7421,36 @@
 		)
 		(uuid "9d4f623c-6df8-4992-b8ce-4cd27da13e8e")
 	)
+	(label "MTX_ROW5"
+		(at 39.37 137.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9e18f929-7d6f-479e-98b5-947d96ae1d17")
+	)
+	(label "MTX_COL2"
+		(at 140.97 109.22 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9ea9a1c0-5419-474c-b707-231376412e9f")
+	)
+	(label "MTX_COL4"
+		(at 140.97 114.3 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a800d216-4db8-43da-a853-b9d1513bd33e")
+	)
 	(label "COMPRT_RX"
 		(at 179.07 53.34 180)
 		(effects
@@ -7347,16 +7460,6 @@
 			(justify right bottom)
 		)
 		(uuid "a919b3d4-b21e-49bc-a337-76cb28930ab1")
-	)
-	(label "MTX_COL5"
-		(at 140.97 121.92 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "b2473789-d365-485e-8269-50af2aed401d")
 	)
 	(label "MTX_ROW5"
 		(at 175.26 95.25 0)
@@ -7418,16 +7521,6 @@
 		)
 		(uuid "cdbc7c2e-adec-43ad-92a2-0b387f873a01")
 	)
-	(label "COMPRT_TX"
-		(at 142.24 109.22 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d1222e0f-00f9-4985-9087-1baeda1d5cd4")
-	)
 	(label "EEPROM_SCK"
 		(at 39.37 147.32 0)
 		(effects
@@ -7437,6 +7530,16 @@
 			(justify left bottom)
 		)
 		(uuid "d40dfc91-07ae-42d2-b0cd-3e28d7c381d9")
+	)
+	(label "COMPRT_RX"
+		(at 140.97 129.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "da6b556a-9470-474f-86c3-945958389f99")
 	)
 	(label "PRC_DIO"
 		(at 140.97 137.16 180)
@@ -7488,6 +7591,16 @@
 		)
 		(uuid "e4e7113d-7d70-4ad7-b748-d42482965e4f")
 	)
+	(label "MTX_ROW3"
+		(at 39.37 132.08 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e5717653-dd1a-435a-97f3-e031d95cc61e")
+	)
 	(label "RGB_R"
 		(at 39.37 142.24 0)
 		(effects
@@ -7508,16 +7621,6 @@
 		)
 		(uuid "ef1b9b8c-66a1-4f25-b72c-e9085ed79f68")
 	)
-	(label "ADC_CS"
-		(at 140.97 127 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "f1fc6cc5-5bf9-4f19-848a-2b5903ea051c")
-	)
 	(label "PRG_CLK"
 		(at 140.97 139.7 180)
 		(effects
@@ -7527,26 +7630,6 @@
 			(justify right bottom)
 		)
 		(uuid "faa865d2-e81e-4140-b777-37a108ed171c")
-	)
-	(label "COMPRT_RX"
-		(at 142.24 111.76 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "fb3f89a3-682f-4f84-857e-baa0098cfd16")
-	)
-	(label "MTX_COL2"
-		(at 140.97 114.3 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "fc6a7648-64d7-413b-9676-0d0c643e041a")
 	)
 	(label "CAN_RX"
 		(at 226.06 125.73 0)
@@ -8143,6 +8226,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 162.56 167.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "32ad9a29-3eee-42c9-8259-16ebebfb2778")
+		(property "Reference" "H1"
+			(at 165.1 166.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 165.1 168.9099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 162.56 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 162.56 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 162.56 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 153.67 24.13 0)
 		(unit 1)
@@ -8441,6 +8588,70 @@
 			(project "StrainGauge_Controlstick_Interface"
 				(path "/c02972ce-12f7-4802-a362-236013b74ddd"
 					(reference "#PWR043")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 182.88 167.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "42603225-c9f5-426b-aa7d-153216722fd7")
+		(property "Reference" "H2"
+			(at 185.42 166.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 185.42 168.9099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 182.88 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 182.88 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 182.88 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "flight_stick"
+				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c"
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -10485,6 +10696,70 @@
 			(project "flight_stick"
 				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c"
 					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 203.2 167.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d86b5079-7a09-4d1d-8bf9-afd890bca9c1")
+		(property "Reference" "H3"
+			(at 205.74 166.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 205.74 168.9099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 203.2 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 203.2 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 203.2 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "flight_stick"
+				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c"
+					(reference "H3")
 					(unit 1)
 				)
 			)
