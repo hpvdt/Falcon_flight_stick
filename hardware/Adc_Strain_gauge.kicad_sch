@@ -399,132 +399,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:NetTie_2"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board yes)
-			(property "Reference" "NT"
-				(at 0 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "NetTie_2"
-				(at 0 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Net tie, 2 pins"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "net tie short"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Net*Tie*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "NetTie_2_0_1"
-				(polyline
-					(pts
-						(xy -1.27 0) (xy 1.27 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "NetTie_2_1_1"
-				(pin passive line
-					(at -2.54 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:R_US"
 			(pin_numbers
 				(hide yes)
@@ -1288,6 +1162,131 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:+3.3VA"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+3.3VA"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+3.3VA_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3.3VA_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers
@@ -1629,16 +1628,6 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 110.49) (xy 66.04 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "15ebb90b-4383-4266-8656-01e33b57588b")
-	)
-	(wire
-		(pts
 			(xy 81.28 57.15) (xy 110.49 57.15)
 		)
 		(stroke
@@ -1969,16 +1958,6 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 115.57) (xy 44.45 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "957282d0-0177-4fd5-8f06-b4314cd0313b")
-	)
-	(wire
-		(pts
 			(xy 144.78 63.5) (xy 154.94 63.5)
 		)
 		(stroke
@@ -2056,16 +2035,6 @@
 			(type default)
 		)
 		(uuid "acf429fe-844c-4f5e-a31d-0f9cac6d3516")
-	)
-	(wire
-		(pts
-			(xy 44.45 110.49) (xy 52.07 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b291d676-2ff6-4a59-bbe3-c8baff0a91b4")
 	)
 	(wire
 		(pts
@@ -2216,16 +2185,6 @@
 			(type default)
 		)
 		(uuid "e2d2d8a8-ac4b-4d22-ab4f-de0a3ec373a7")
-	)
-	(wire
-		(pts
-			(xy 66.04 110.49) (xy 66.04 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e403a14a-dfaa-4fff-8e49-1ccccb91c0d2")
 	)
 	(wire
 		(pts
@@ -2765,6 +2724,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3VA")
+		(at 55.88 34.29 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1d53652a-df27-4f62-98b4-98bad88eed88")
+		(property "Reference" "#PWR039"
+			(at 55.88 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3VA"
+			(at 55.88 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 55.88 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 55.88 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
+			(at 55.88 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fb49aad8-e102-4d14-a8af-3594d4f13bc0")
+		)
+		(instances
+			(project "flight_stick"
+				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/15c49ee7-22e5-4295-8901-93a846a82742"
+					(reference "#PWR039")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_US")
 		(at 62.23 39.37 90)
 		(unit 1)
@@ -2911,72 +2936,6 @@
 			(project "flight_stick"
 				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/15c49ee7-22e5-4295-8901-93a846a82742"
 					(reference "R15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 101.6 74.93 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "27409139-1795-4c35-9c2c-081974c494de")
-		(property "Reference" "#PWR053"
-			(at 101.6 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 101.6 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 101.6 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 101.6 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 101.6 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b7eb43b3-bca7-4057-8998-57fbbdb04f33")
-		)
-		(instances
-			(project "flight_stick"
-				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/15c49ee7-22e5-4295-8901-93a846a82742"
-					(reference "#PWR053")
 					(unit 1)
 				)
 			)
@@ -3257,71 +3216,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 67.31 81.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "570ae446-b70c-4a82-bba2-6d661606d693")
-		(property "Reference" "#PWR051"
-			(at 67.31 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 64.008 81.026 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 67.31 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 67.31 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 67.31 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e4046089-721a-4815-8306-2f52c5fc98ae")
-		)
-		(instances
-			(project "flight_stick"
-				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/15c49ee7-22e5-4295-8901-93a846a82742"
-					(reference "#PWR051")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:Conn_01x04_Socket")
 		(at 46.99 86.36 0)
 		(mirror y)
@@ -3473,84 +3367,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:NetTie_2")
-		(at 54.61 110.49 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "64b09929-803f-41f0-89a9-93501c19cf8c")
-		(property "Reference" "NT1"
-			(at 54.61 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "NetTie_2"
-			(at 54.61 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "NetTie:NetTie-2_THT_Pad1.0mm"
-			(at 54.61 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 54.61 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Net tie, 2 pins"
-			(at 54.61 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "1ae2b7cb-731a-4de3-bfb0-6407b473de79")
-		)
-		(pin "1"
-			(uuid "25114afc-cc99-49c3-8058-872ab6bde653")
-		)
-		(instances
-			(project ""
-				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/15c49ee7-22e5-4295-8901-93a846a82742"
-					(reference "NT1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 55.88 34.29 0)
+		(lib_id "power:+3.3VA")
+		(at 67.31 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "651f7c37-4952-4433-825e-c4070a21418f")
-		(property "Reference" "#PWR039"
-			(at 55.88 38.1 0)
+		(fields_autoplaced yes)
+		(uuid "60c5dd75-f737-44ca-b740-5752512d02c5")
+		(property "Reference" "#PWR044"
+			(at 67.31 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3558,8 +3385,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.3V"
-			(at 51.562 31.242 0)
+		(property "Value" "+3.3VA"
+			(at 67.31 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3567,7 +3394,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 55.88 34.29 0)
+			(at 67.31 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3576,7 +3403,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 55.88 34.29 0)
+			(at 67.31 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3584,74 +3411,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 55.88 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "92da3a3d-e04a-44ea-93b1-b6b6777c7a9b")
-		)
-		(instances
-			(project "flight_stick"
-				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/15c49ee7-22e5-4295-8901-93a846a82742"
-					(reference "#PWR039")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GNDA")
-		(at 44.45 115.57 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "72564785-0d8f-40c1-81ab-f205ab8e6398")
-		(property "Reference" "#PWR013"
-			(at 44.45 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDA"
-			(at 44.45 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 44.45 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 44.45 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
-			(at 44.45 115.57 0)
+		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
+			(at 67.31 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3660,12 +3421,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "e3bcc474-1254-4f35-b858-79a77d2a22ce")
+			(uuid "3294bb78-0f7e-4fff-9645-ee0ea88ea934")
 		)
 		(instances
 			(project "flight_stick"
 				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/15c49ee7-22e5-4295-8901-93a846a82742"
-					(reference "#PWR013")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -3982,71 +3743,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 66.04 115.57 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8e9c46eb-0bbf-4149-becd-7d10b8c0826a")
-		(property "Reference" "#PWR016"
-			(at 66.04 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 66.04 119.888 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 66.04 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 66.04 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 66.04 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "325640ea-5a58-41c7-8aca-d2e4b30edf24")
-		)
-		(instances
-			(project "flight_stick"
-				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/15c49ee7-22e5-4295-8901-93a846a82742"
-					(reference "#PWR016")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 167.64 78.74 0)
 		(unit 1)
@@ -4119,6 +3815,138 @@
 			(project "flight_stick"
 				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/15c49ee7-22e5-4295-8901-93a846a82742"
 					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3VA")
+		(at 101.6 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9ae441a9-0003-43e9-93ff-1443e17750ac")
+		(property "Reference" "#PWR033"
+			(at 101.6 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3VA"
+			(at 101.6 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.6 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
+			(at 101.6 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8beb820e-eef3-44ff-8cfc-06c51f94600a")
+		)
+		(instances
+			(project "flight_stick"
+				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/15c49ee7-22e5-4295-8901-93a846a82742"
+					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3VA")
+		(at 55.88 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9dbede13-4b80-46f7-b022-7dd192de410e")
+		(property "Reference" "#PWR042"
+			(at 55.88 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3VA"
+			(at 55.88 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 55.88 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 55.88 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
+			(at 55.88 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6b23b824-b75a-42d0-9316-dc6e1dd19d87")
+		)
+		(instances
+			(project "flight_stick"
+				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/15c49ee7-22e5-4295-8901-93a846a82742"
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -4416,71 +4244,6 @@
 			(project "flight_stick"
 				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/15c49ee7-22e5-4295-8901-93a846a82742"
 					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 55.88 58.42 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f6b79db1-690b-4dfc-a836-8e6f1fb28e7b")
-		(property "Reference" "#PWR042"
-			(at 55.88 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 52.324 56.642 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 55.88 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 55.88 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 55.88 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fed0df4f-d2e0-4824-9328-489538a77f37")
-		)
-		(instances
-			(project "flight_stick"
-				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/15c49ee7-22e5-4295-8901-93a846a82742"
-					(reference "#PWR042")
 					(unit 1)
 				)
 			)
