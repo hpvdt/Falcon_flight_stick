@@ -1360,7 +1360,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Regulator_Switching:TPS62175DQC"
+		(symbol "Regulator_Switching:TPS62177DQC"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1373,7 +1373,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "TPS62175DQC"
+			(property "Value" "TPS62177DQC"
 				(at -1.27 11.43 0)
 				(effects
 					(font
@@ -1401,7 +1401,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "500mA Step-Down Converter with Sleep Mode, adjustable Output Voltage, 4.75-28V input voltage, WSON-10"
+			(property "Description" "500mA Step-Down Converter with Sleep Mode, fixed 3.3V Output Voltage, 4.75-28V input voltage, WSON-10"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1428,7 +1428,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "TPS62175DQC_0_1"
+			(symbol "TPS62177DQC_0_1"
 				(rectangle
 					(start -7.62 10.16)
 					(end 7.62 -10.16)
@@ -1441,7 +1441,7 @@
 					)
 				)
 			)
-			(symbol "TPS62175DQC_1_1"
+			(symbol "TPS62177DQC_1_1"
 				(pin power_in line
 					(at -10.16 7.62 0)
 					(length 2.54)
@@ -3405,6 +3405,111 @@
 		)
 	)
 	(symbol
+		(lib_id "Regulator_Switching:TPS62177DQC")
+		(at 106.68 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "32e9e759-aa43-4e8a-8b21-2995d9b78928")
+		(property "Reference" "U8"
+			(at 106.68 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TPS62177DQC"
+			(at 106.68 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SON:WSON-10-1EP_2x3mm_P0.5mm_EP0.84x2.4mm_ThermalVias"
+			(at 110.49 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tps62177.pdf"
+			(at 106.68 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "500mA Step-Down Converter with Sleep Mode, fixed 3.3V Output Voltage, 4.75-28V input voltage, WSON-10"
+			(at 106.68 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C91241"
+			(at 106.68 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "3d836fd9-ca2e-422c-9f9c-e1c023e3c22e")
+		)
+		(pin "8"
+			(uuid "6b801891-d182-4532-b932-bbb7840c0a9c")
+		)
+		(pin "7"
+			(uuid "3b8eedbd-75e7-471d-af10-de2a125c4a8c")
+		)
+		(pin "4"
+			(uuid "8e7ffbd2-e259-4350-bb30-4bf617077e31")
+		)
+		(pin "11"
+			(uuid "c2ee6f84-1c36-46ab-b864-5969ddc2c359")
+		)
+		(pin "2"
+			(uuid "b5545451-e401-4edc-b924-c418c146531c")
+		)
+		(pin "3"
+			(uuid "3bfd22c4-b1de-4a33-be97-afb956711016")
+		)
+		(pin "1"
+			(uuid "ad627881-f22f-4c06-9a30-a48efd68caa4")
+		)
+		(pin "6"
+			(uuid "b541af99-c7fd-4a26-9597-2ce8bded85a6")
+		)
+		(pin "5"
+			(uuid "fad6a9ab-4705-4b7d-91cf-d5eb2f2ed757")
+		)
+		(pin "10"
+			(uuid "42ec5cb3-85e1-40f5-949c-ea3f2c0c8cda")
+		)
+		(instances
+			(project ""
+				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/bc2feb38-b1d3-42da-a90c-1ee53748a038"
+					(reference "U8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_US")
 		(at 142.24 68.58 0)
 		(unit 1)
@@ -3963,111 +4068,6 @@
 			(project "flight_stick"
 				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/bc2feb38-b1d3-42da-a90c-1ee53748a038"
 					(reference "#PWR04")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Regulator_Switching:TPS62175DQC")
-		(at 106.68 66.04 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6ea722cf-12a9-4bd3-8bdc-56c5c936d124")
-		(property "Reference" "U1"
-			(at 106.68 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TPS62175DQC"
-			(at 106.68 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_SON:WSON-10-1EP_2x3mm_P0.5mm_EP0.84x2.4mm_ThermalVias"
-			(at 110.49 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tps62177.pdf"
-			(at 106.68 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "500mA Step-Down Converter with Sleep Mode, adjustable Output Voltage, 4.75-28V input voltage, WSON-10"
-			(at 106.68 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C32097"
-			(at 106.68 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "7"
-			(uuid "ca9147f4-8a1d-4bdb-bcaf-19b6d79ed693")
-		)
-		(pin "8"
-			(uuid "a5abfeaf-64b1-442a-9075-062f34b0b459")
-		)
-		(pin "9"
-			(uuid "8d2273e8-367e-4d2d-a636-a670e54bb97f")
-		)
-		(pin "11"
-			(uuid "c79c7a52-ed9a-4c5b-8558-b7addccc5f94")
-		)
-		(pin "2"
-			(uuid "8e38fcde-4cb9-4c0e-b6b5-a29be4f64107")
-		)
-		(pin "3"
-			(uuid "85f1a08e-badf-47f5-b84f-1f258846658c")
-		)
-		(pin "4"
-			(uuid "2cb76e47-2659-4db4-8be2-d1424326e319")
-		)
-		(pin "5"
-			(uuid "8985fc41-594e-4766-86c3-5f76ff67931c")
-		)
-		(pin "6"
-			(uuid "b8172922-bcc3-45b6-8609-a8aea278d507")
-		)
-		(pin "1"
-			(uuid "481b4d6e-cb8a-4c21-9860-bf67f346bbff")
-		)
-		(pin "10"
-			(uuid "e07e594b-b37a-42cf-9e4a-742ac4e8d5be")
-		)
-		(instances
-			(project "flight_stick"
-				(path "/594f9b09-cd7b-4dfb-a8eb-b099e26ad96c/bc2feb38-b1d3-42da-a90c-1ee53748a038"
-					(reference "U1")
 					(unit 1)
 				)
 			)
