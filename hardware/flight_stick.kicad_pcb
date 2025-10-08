@@ -22581,17 +22581,6 @@
 		(uuid "7911cc49-60dd-45b3-aad9-8aa697437940")
 	)
 	(gr_line
-		(start 98.5 90)
-		(end 98.5 73)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(locked yes)
-		(layer "Dwgs.User")
-		(uuid "829374be-a4a5-40f7-8753-52a85f7f17d7")
-	)
-	(gr_line
 		(start 98.5 48)
 		(end 98.5 39.5)
 		(stroke
