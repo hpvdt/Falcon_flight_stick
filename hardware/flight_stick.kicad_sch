@@ -6915,16 +6915,6 @@
 		)
 		(uuid "00ad127b-4c98-4b91-aac1-e906aa1bf8bc")
 	)
-	(label "RESET"
-		(at 175.26 30.48 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "01855219-ee9f-4c11-9cb1-21d4a28c765c")
-	)
 	(label "RGB_G"
 		(at 36.83 147.32 0)
 		(effects
@@ -6934,6 +6924,16 @@
 			(justify left bottom)
 		)
 		(uuid "040d70f3-e008-42b3-81a5-aff5155c802a")
+	)
+	(label "~{RESET}"
+		(at 175.26 30.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0b185ca8-7cd9-4d73-811a-71ab9c1af2c7")
 	)
 	(label "MTX_COL4"
 		(at 167.64 100.33 0)
@@ -7074,6 +7074,16 @@
 			(justify right bottom)
 		)
 		(uuid "3d887a85-1a3b-4f78-8d0c-fc065298ae42")
+	)
+	(label "~{RESET}"
+		(at 219.71 95.25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3dcfe701-cd97-4aaf-b61b-da0402e46e6b")
 	)
 	(label "COMPRT_TX"
 		(at 36.83 149.86 0)
@@ -7275,16 +7285,6 @@
 		)
 		(uuid "8aa9d2a4-c4bf-4a33-861d-33086276bddf")
 	)
-	(label "RESET"
-		(at 219.71 95.25 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8bb342b4-6653-4f54-b3af-e5ef8101404a")
-	)
 	(label "MTX_ROW3"
 		(at 207.01 97.79 180)
 		(effects
@@ -7355,7 +7355,7 @@
 		)
 		(uuid "9f004913-46dc-4e3f-a3c6-3e8babd04977")
 	)
-	(label "RESET"
+	(label "~{RESET}"
 		(at 73.66 100.33 0)
 		(effects
 			(font
@@ -11085,9 +11085,9 @@
 				)
 			)
 		)
-		(pin "RST" input
+		(pin "POWER__GOOD" output
 			(at 226.06 95.25 180)
-			(uuid "bcc7e65c-459d-4ae6-90c8-ac63a57e89d7")
+			(uuid "e8a66ab1-bdcb-4c89-8006-c75ff41495b1")
 			(effects
 				(font
 					(size 1.27 1.27)
