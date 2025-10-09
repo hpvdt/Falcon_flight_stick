@@ -11,11 +11,13 @@ This design features new changes such as:
 - a 1x128 Byte EEPROM chip to store calibration data
 
 ### Design Breakdown
-<img width="946" height="737" alt="image" src="https://github.com/user-attachments/assets/04e3d467-ea19-4368-9c50-fca01469f35d" />
+<img width="1312" height="976" alt="image" src="https://github.com/user-attachments/assets/4b1ab422-8b88-4cf3-a601-986f41056db9" />
+
 
 The flightstick is centred around the STM32F103CBU6 which manages almost all events on the board.
 The MCU is programmed using an STLinkV3 via serial wire debug and uses a peripheral UART port to send and recieve messages to develop/debug firmware development.
 The STM32 is also connected to two differential impedance controlled data lines to the USB-C connector which acts as both a virtual COM port or an HID "plug-and-play" joystick depending on the firmware flashed.
+
 There are header holes around the inner diameter of the board, labelled R (roll), P (pitch), and Y (you guess). These holes are soldered to strain gauges that are fastened to a metal shaft on which the user applies force to. These strain gauge values change based on how much force the user is pushing the flight stick shaft in a given direction.
 The STM32 is connected to a T.I. ADC that takes the signal of these three strain gauges and, with 32-bit precision, sends them to the MCU after triggering an event with its DRDY (data ready) output, starting an SPI read. 
 These values are then processed and converted into meaningful, readable values and are either sent out to the servo controller board to change the position of the wings, or sent over USBC to control the plug-and-play joystick. 
@@ -27,11 +29,21 @@ The power system revolves around a Texas Instruments Stepdown converter, the TPS
 ![PCBSchematic](https://github.com/user-attachments/assets/4670dbb4-5875-4a96-b333-24631d5623e4)
 
 ### Layout
+Rev 5 has a few notable features on this completley new layout:
+- New 4 layer stackup due to a higher density of parts and the need for separate digital/analog physical spaces
+- Overhauled placement for a simplified trace fanout
+- Labels on all notable PCB parts, allowing for software developers to understand the board from a high level
+- Variance in trace width depending on power/current vs high-speed switching and low capacitance
+
 Full Layout:
 <img width="972" height="695" alt="image" src="https://github.com/user-attachments/assets/a44c9da9-d550-4acb-bf7e-374860fbc576" />
+Layer 1: Signal
 <img width="863" height="566" alt="image" src="https://github.com/user-attachments/assets/dba7df1a-45fc-4ba4-8cf5-f24956843040" />
+Layer 2: Power
 <img width="845" height="619" alt="image" src="https://github.com/user-attachments/assets/f3745a84-55aa-498d-80d0-7baa79fde328" />
+Layer 3: GND/AGND
 <img width="891" height="593" alt="image" src="https://github.com/user-attachments/assets/cf7ae8ee-e237-467c-b778-f995c1fbce8f" />
+Layer 4: Signal 2
 <img width="832" height="524" alt="image" src="https://github.com/user-attachments/assets/6ab57140-dbd9-4f45-8b1c-8da6f2f88619" />
 
 ### 3D Render
