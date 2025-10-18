@@ -2,7 +2,7 @@
 A custom-designed **flight control stick** for the Falcon Aircraft project — designing both **hardware and firmware** for force sensing, CAN communication, and USB HID joystick interfacing.
 
 <img width="600" height="407" alt="image" src="https://github.com/user-attachments/assets/eb6e8dac-e693-49a5-8a84-b895c92fd1f2" />
-<img width="2013" height="1332" alt="image" src="https://github.com/user-attachments/assets/07c229ae-1129-41b0-90cb-bf1da6967c3e" />
+<img width="1500" alt="image" src="https://github.com/user-attachments/assets/07c229ae-1129-41b0-90cb-bf1da6967c3e" />
 
 ---
 
