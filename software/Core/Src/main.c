@@ -119,7 +119,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  HAL_GPIO_TogglePin(GPIOB, RGB_PIN_Pin);
+	  HAL_Delay(500); // delay 500 ms
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -372,10 +373,6 @@ static void MX_TIM3_Init(void)
   {
     Error_Handler();
   }
-  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
-  {
-    Error_Handler();
-  }
   /* USER CODE BEGIN TIM3_Init 2 */
 
   /* USER CODE END TIM3_Init 2 */
@@ -436,6 +433,9 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOA, MTX_COL5_Pin|MTX_COL4_Pin|MTX_COL3_Pin|MTX_COL2_Pin
                           |MTX_COL1_Pin|ADC_CS_Pin|ADC_RST_Pin, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(RGB_PIN_GPIO_Port, RGB_PIN_Pin, GPIO_PIN_RESET);
+
   /*Configure GPIO pins : MTX_COL5_Pin MTX_COL4_Pin MTX_COL3_Pin MTX_COL2_Pin
                            MTX_COL1_Pin ADC_CS_Pin ADC_RST_Pin */
   GPIO_InitStruct.Pin = MTX_COL5_Pin|MTX_COL4_Pin|MTX_COL3_Pin|MTX_COL2_Pin
@@ -468,6 +468,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : RGB_PIN_Pin */
+  GPIO_InitStruct.Pin = RGB_PIN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(RGB_PIN_GPIO_Port, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */

@@ -89,6 +89,8 @@ void Error_Handler(void);
 #define ADC_CS_GPIO_Port GPIOA
 #define ADC_RST_Pin GPIO_PIN_10
 #define ADC_RST_GPIO_Port GPIOA
+#define RGB_PIN_Pin GPIO_PIN_5
+#define RGB_PIN_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
