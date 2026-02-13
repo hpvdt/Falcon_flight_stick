@@ -81,7 +81,8 @@ Full schematic set:
 <img src="https://github.com/user-attachments/assets/a44c9da9-d550-4acb-bf7e-374860fbc576" width="800"/>
 
 **Layer 1: Signal**  
-<img src="https://github.com/user-attachments/assets/dba7df1a-45fc-4ba4-8cf5-f24956843040" width="800"/>
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/fbe02937-460e-47e3-8baa-e2d02d81ac4c" />
+
 
 **Layer 2: Power**  
 <img src="https://github.com/user-attachments/assets/f3745a84-55aa-498d-80d0-7baa79fde328" width="800"/>
@@ -90,7 +91,8 @@ Full schematic set:
 <img src="https://github.com/user-attachments/assets/cf7ae8ee-e237-467c-b778-f995c1fbce8f" width="800"/>
 
 **Layer 4: Signal 2**  
-<img src="https://github.com/user-attachments/assets/6ab57140-dbd9-4f45-8b1c-8da6f2f88619" width="800"/>
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/518bc78a-754a-45cf-9dd1-f48847a9813a" />
+
 
 ---
 
