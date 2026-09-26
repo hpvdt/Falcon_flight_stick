@@ -9436,10 +9436,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "1d1d447b-dadf-42a0-aed6-439a0bb5777a")
 		(property "Reference" "U4"
-			(at 94.9041 177.8 0)
+			(at 94.742 179.578 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9448,7 +9447,7 @@
 			)
 		)
 		(property "Value" "STM32F103CBU6"
-			(at 94.9041 180.34 0)
+			(at 94.742 182.118 0)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -22,7 +22,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -41,7 +42,7 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-CAN_HandleTypeDef hcan;
+CAN_HandleTypeDef hcan; //test
 
 I2C_HandleTypeDef hi2c2;
 
@@ -66,12 +67,40 @@ static void MX_TIM2_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
-
+/* ADS131M03: 5-word SPI frame; cmd24 is MSB-first 24-bit command; first RX word is 24-bit (16-bit register MSB-aligned in bits 23:8). */
+static uint32_t ads131m03_frame_exchange(uint32_t cmd24);
+static void ads131m03_reset(void);
+static uint32_t ads131m03_rreg_opcode(uint8_t reg_addr);
+static uint16_t ads131m03_read_reg16(uint8_t reg_addr);
+static void ads131m03_apply_spi_probe(uint32_t cpol_phase, uint32_t prescaler);
+static int ads131m03_id_looks_valid(uint16_t id_reg);
+static void ads131m03_run_connection_test(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+#define LOG_BUF_SIZE 256
+static char log_buf[LOG_BUF_SIZE];
 
+/* Send one character to USART1 for printf() / puts() */
+int __io_putchar(int ch)
+{
+  uint8_t c = (uint8_t)(ch & 0xFF);
+  HAL_UART_Transmit(&huart1, &c, 1, 100);
+  return ch;
+}
+
+/* Log a string (adds \\r\\n); uses fixed buffer to avoid stack overflow */
+static void log_msg(const char *msg)
+{
+  size_t len = strlen(msg);
+  if (len + 2 > LOG_BUF_SIZE)
+    len = LOG_BUF_SIZE - 2;
+  memcpy(log_buf, msg, len);
+  log_buf[len++] = '\r';
+  log_buf[len++] = '\n';
+  HAL_UART_Transmit(&huart1, (uint8_t *)log_buf, (uint16_t)len, 500);
+}
 /* USER CODE END 0 */
 
 /**
@@ -111,7 +140,13 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
+  /* MCO on PA8: use HSE (8 MHz per Cube config), not SYSCLK. Datasheet CLKIN 2 MHz–8.2 MHz (SBAS889A). */
+  HAL_RCC_MCOConfig(RCC_MCO, RCC_MCO1SOURCE_HSE, RCC_MCODIV_1);
 
+  HAL_GPIO_WritePin(ADC_CS_GPIO_Port, ADC_CS_Pin, GPIO_PIN_SET);
+  HAL_Delay(50);
+
+  ads131m03_run_connection_test();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -119,8 +154,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_GPIO_TogglePin(GPIOB, RGB_PIN_Pin);
-	  HAL_Delay(500); // delay 500 ms
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -170,7 +204,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  HAL_RCC_MCOConfig(RCC_MCO, RCC_MCO1SOURCE_SYSCLK, RCC_MCODIV_1);
+  /* MCO (PA8 -> ADS131M03 CLKIN) is enabled in main after GPIO_Init */
 }
 
 /**
@@ -277,7 +311,14 @@ static void MX_SPI2_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN SPI2_Init 2 */
-
+  /* ADS131M03 requires CPOL=0, CPHA=1 (data latched on falling edge, output on rising) */
+  hspi2.Init.CLKPhase = SPI_PHASE_2EDGE;
+  /* Slower SPI for debugging: prescaler 8 (was 2) in case of signal integrity / timing */
+  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_8;
+  if (HAL_SPI_Init(&hspi2) != HAL_OK)
+  {
+    Error_Handler();
+  }
   /* USER CODE END SPI2_Init 2 */
 
 }
@@ -463,10 +504,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(ADC_DRDY_EXTI12_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PA8 */
+  /*Configure GPIO pin : PA8 (MCO / ADC_MCO - master clock output for ADS131M03) */
   GPIO_InitStruct.Pin = GPIO_PIN_8;
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;  /* fast slew for clock output */
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : RGB_PIN_Pin */
@@ -481,7 +522,211 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+#define ADS131M03_FRAME_WORDS  5
+#define ADS131M03_FRAME_BYTES  (ADS131M03_FRAME_WORDS * 3)
+#define ADS131M03_SPI_TIMEOUT 100
 
+static uint32_t ads131m03_frame_exchange(uint32_t cmd24)
+{
+  uint8_t tx[ADS131M03_FRAME_BYTES];
+  uint8_t rx[ADS131M03_FRAME_BYTES];
+  uint32_t first_word24;
+
+  tx[0] = (uint8_t)((cmd24 >> 16) & 0xFF);
+  tx[1] = (uint8_t)((cmd24 >> 8) & 0xFF);
+  tx[2] = (uint8_t)(cmd24 & 0xFF);
+  memset(tx + 3, 0, ADS131M03_FRAME_BYTES - 3);
+
+  HAL_GPIO_WritePin(ADC_CS_GPIO_Port, ADC_CS_Pin, GPIO_PIN_RESET);
+  HAL_SPI_TransmitReceive(&hspi2, tx, rx, ADS131M03_FRAME_BYTES, ADS131M03_SPI_TIMEOUT);
+  HAL_GPIO_WritePin(ADC_CS_GPIO_Port, ADC_CS_Pin, GPIO_PIN_SET);
+
+  first_word24 = ((uint32_t)rx[0] << 16) | ((uint32_t)rx[1] << 8) | (uint32_t)rx[2];
+  return first_word24;
+}
+
+static uint32_t ads131m03_rreg_opcode(uint8_t reg_addr)
+{
+  return 0xA00000u | (((uint32_t)reg_addr & 0x3Fu) << 14);
+}
+
+static uint16_t ads131m03_read_reg16(uint8_t reg_addr)
+{
+  ads131m03_frame_exchange(ads131m03_rreg_opcode(reg_addr));
+  {
+    uint32_t w = ads131m03_frame_exchange(0u);
+    return (uint16_t)((w >> 8) & 0xFFFFu);
+  }
+}
+
+static void ads131m03_apply_spi_probe(uint32_t cpol_phase, uint32_t prescaler)
+{
+  /* cpol_phase: 0..3 = (CPOL,CPHA) 00,01,10,11 per STM32 naming */
+  hspi2.Init.CLKPolarity = (cpol_phase & 2u) ? SPI_POLARITY_HIGH : SPI_POLARITY_LOW;
+  hspi2.Init.CLKPhase = (cpol_phase & 1u) ? SPI_PHASE_2EDGE : SPI_PHASE_1EDGE;
+  hspi2.Init.BaudRatePrescaler = prescaler;
+  if (HAL_SPI_Init(&hspi2) != HAL_OK)
+    Error_Handler();
+}
+
+static int ads131m03_id_looks_valid(uint16_t id_reg)
+{
+  /* ID reset 23xxh: bits 15:12 = 0010b, bits 11:8 = 0011b (CHANCNT=3); bits 7:0 vary (Table 8-14). */
+  return (id_reg & 0xFF00u) == 0x2300u;
+}
+
+typedef struct
+{
+  uint8_t addr;
+  uint16_t mask;
+  uint16_t expect;
+  const char *name;
+} Ads131RegExpect;
+
+/* Table 8-12 SBAS889A reset values; 0x05 not in map (reserved gap). */
+static const Ads131RegExpect ads131_expects[] = {
+  { 0x01u, 0xFFF8u, 0x0500u, "STATUS" },
+  { 0x02u, 0xFFFFu, 0x0510u, "MODE" },
+  { 0x03u, 0xFFFFu, 0x080Eu, "CLOCK" },
+  { 0x04u, 0xFFFFu, 0x0000u, "GAIN" },
+  { 0x06u, 0xFFFFu, 0x0600u, "CFG" },
+  { 0x07u, 0xFFFFu, 0x0000u, "THRSHLD_MSB" },
+  { 0x08u, 0xFFFFu, 0x0000u, "THRSHLD_LSB" },
+  { 0x09u, 0xFFFFu, 0x0000u, "CH0_CFG" },
+  { 0x0Au, 0xFFFFu, 0x0000u, "CH0_OCAL_MSB" },
+  { 0x0Bu, 0xFFFFu, 0x0000u, "CH0_OCAL_LSB" },
+  { 0x0Cu, 0xFFFFu, 0x8000u, "CH0_GCAL_MSB" },
+  { 0x0Du, 0xFFFFu, 0x0000u, "CH0_GCAL_LSB" },
+  { 0x0Eu, 0xFFFFu, 0x0000u, "CH1_CFG" },
+  { 0x0Fu, 0xFFFFu, 0x0000u, "CH1_OCAL_MSB" },
+  { 0x10u, 0xFFFFu, 0x0000u, "CH1_OCAL_LSB" },
+  { 0x11u, 0xFFFFu, 0x8000u, "CH1_GCAL_MSB" },
+  { 0x12u, 0xFFFFu, 0x0000u, "CH1_GCAL_LSB" },
+  { 0x13u, 0xFFFFu, 0x0000u, "CH2_CFG" },
+  { 0x14u, 0xFFFFu, 0x0000u, "CH2_OCAL_MSB" },
+  { 0x15u, 0xFFFFu, 0x0000u, "CH2_OCAL_LSB" },
+  { 0x16u, 0xFFFFu, 0x8000u, "CH2_GCAL_MSB" },
+  { 0x17u, 0xFFFFu, 0x0000u, "CH2_GCAL_LSB" },
+  { 0x3Eu, 0xFFFFu, 0x0000u, "REGMAP_CRC" },
+};
+
+static const uint8_t ads131_reserved_probe[] = {
+  0x05u, 0x18u, 0x19u, 0x1Au, 0x1Bu, 0x1Cu, 0x1Du, 0x1Eu, 0x1Fu,
+  0x20u, 0x21u, 0x22u, 0x23u, 0x24u, 0x25u, 0x26u, 0x27u, 0x28u, 0x29u, 0x2Au, 0x2Bu, 0x2Cu, 0x2Du, 0x2Eu, 0x2Fu,
+  0x30u, 0x31u, 0x32u, 0x33u, 0x34u, 0x35u, 0x36u, 0x37u, 0x38u, 0x39u, 0x3Au, 0x3Bu, 0x3Cu, 0x3Du, 0x3Fu
+};
+
+static void ads131m03_run_connection_test(void)
+{
+  static const uint32_t prescalers[] = {
+    SPI_BAUDRATEPRESCALER_256, SPI_BAUDRATEPRESCALER_128, SPI_BAUDRATEPRESCALER_64,
+    SPI_BAUDRATEPRESCALER_32, SPI_BAUDRATEPRESCALER_16, SPI_BAUDRATEPRESCALER_8,
+    SPI_BAUDRATEPRESCALER_4, SPI_BAUDRATEPRESCALER_2
+  };
+  static const unsigned int pre_divisor[] = { 256u, 128u, 64u, 32u, 16u, 8u, 4u, 2u };
+  const char *mode_names[] = { "CPOL0_CPHA0", "CPOL0_CPHA1", "CPOL1_CPHA0", "CPOL1_CPHA1" };
+  uint32_t best_mode = 0;
+  uint32_t best_pre = SPI_BAUDRATEPRESCALER_256;
+  int found = 0;
+  unsigned int ui, uj;
+  uint16_t id_sample;
+  int pass_count = 0;
+  int check_count = 0;
+
+  printf("\r\n======== ADS131M03 connection check ========\r\n");
+  printf("Pins: PA8 MCO->CLKIN, PA9 CS, PA10 SYNC/RST, PB13 SCK PB14 MISO PB15 MOSI\r\n");
+  printf("UART: USART1 remap PB6 TX / PB7 RX @ 115200\r\n");
+  printf("MCO source: HSE (~8 MHz). Datasheet CLKIN 2-8.2 MHz.\r\n\r\n");
+
+  printf("Sweep SPI mode (CPOL/CPHA) x prescaler; look for ID CHANCNT=3...\r\n");
+  for (ui = 0; ui < 4u; ui++)
+  {
+    for (uj = 0; uj < sizeof(prescalers) / sizeof(prescalers[0]); uj++)
+    {
+      ads131m03_apply_spi_probe(ui, prescalers[uj]);
+      ads131m03_reset();
+      (void)ads131m03_frame_exchange(0u);
+      (void)ads131m03_frame_exchange(ads131m03_rreg_opcode(0u));
+      id_sample = (uint16_t)((ads131m03_frame_exchange(0u) >> 8) & 0xFFFFu);
+      printf("  mode=%s pre=/%-3u -> ID=0x%04X %s\r\n", mode_names[ui],
+             pre_divisor[uj], (unsigned int)id_sample,
+             ads131m03_id_looks_valid(id_sample) ? "OK" : "--");
+      if (ads131m03_id_looks_valid(id_sample) && !found)
+      {
+        found = 1;
+        best_mode = ui;
+        best_pre = prescalers[uj];
+      }
+    }
+  }
+
+  if (!found)
+  {
+    printf("\r\nSUMMARY: No valid ID on any SPI mode/prescaler. Check wiring, power, CLKIN on PA8, CS on PA9.\r\n");
+    /* Restore datasheet-recommended Mode 1 for any manual probing */
+    ads131m03_apply_spi_probe(1u, SPI_BAUDRATEPRESCALER_8);
+    return;
+  }
+
+  printf("\r\nUsing first hit: %s, prescaler enc=0x%lX (re-init for register sweep).\r\n",
+         mode_names[best_mode], (unsigned long)best_pre);
+  ads131m03_apply_spi_probe(best_mode, best_pre);
+  ads131m03_reset();
+  (void)ads131m03_frame_exchange(0u);
+
+  printf("\r\n--- Register reads vs Table 8-12 reset (mask where noted) ---\r\n");
+  id_sample = ads131m03_read_reg16(0u);
+  check_count++;
+  if (ads131m03_id_looks_valid(id_sample))
+  {
+    pass_count++;
+    printf("  [OK] 0x00 ID           read 0x%04X (expect 0x23xx)\r\n", (unsigned int)id_sample);
+  }
+  else
+  {
+    printf("  [BAD] 0x00 ID           read 0x%04X\r\n", (unsigned int)id_sample);
+  }
+
+  for (ui = 0; ui < sizeof(ads131_expects) / sizeof(ads131_expects[0]); ui++)
+  {
+    const Ads131RegExpect *e = &ads131_expects[ui];
+    uint16_t v = ads131m03_read_reg16(e->addr);
+    check_count++;
+    if ((v & e->mask) == (e->expect & e->mask))
+    {
+      pass_count++;
+      printf("  [OK] 0x%02X %-14s read 0x%04X\r\n", (unsigned int)e->addr, e->name, (unsigned int)v);
+    }
+    else
+    {
+      printf("  [XX] 0x%02X %-14s read 0x%04X (want 0x%04X & 0x%04X)\r\n",
+             (unsigned int)e->addr, e->name, (unsigned int)v, (unsigned int)e->expect, (unsigned int)e->mask);
+    }
+  }
+
+  printf("\r\n--- Reserved / unlisted addresses (read only, no pass/fail) ---\r\n");
+  for (ui = 0; ui < sizeof(ads131_reserved_probe) / sizeof(ads131_reserved_probe[0]); ui++)
+  {
+    uint8_t a = ads131_reserved_probe[ui];
+    uint16_t v = ads131m03_read_reg16(a);
+    printf("  0x%02X -> 0x%04X\r\n", (unsigned int)a, (unsigned int)v);
+  }
+
+  printf("\r\n======== SUMMARY: %d / %d checks matched expected reset ========\r\n", pass_count, check_count);
+  if (pass_count == check_count)
+    printf("ADS131M03 SPI link OK.\r\n");
+  else
+    printf("Some mismatches (DRDY on STATUS, prior writes, or noise). Re-run after power cycle.\r\n");
+}
+
+static void ads131m03_reset(void)
+{
+  /* SYNC/RESET low > 2048 CLKIN cycles (~0.25 ms at 8 MHz); use 1 ms then release */
+  HAL_GPIO_WritePin(ADC_RST_GPIO_Port, ADC_RST_Pin, GPIO_PIN_RESET);
+  HAL_Delay(10);
+  HAL_GPIO_WritePin(ADC_RST_GPIO_Port, ADC_RST_Pin, GPIO_PIN_SET);
+  HAL_Delay(50);  /* allow internal clocks to stabilize before first SPI access */
+}
 /* USER CODE END 4 */
 
 /**

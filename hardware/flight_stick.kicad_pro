@@ -513,7 +513,7 @@
       "plot": "C:/Users/ghosh/OneDrive/Documents/Flightstickgerber/",
       "pos_files": "C:/Users/ghosh/OneDrive/Documents/Flightstickgerber/",
       "specctra_dsn": "",
-      "step": "../../../Personal Projects/flight_stick_pcb.step",
+      "step": "../Mechanical/flight_stick_pcb.step",
       "svg": "",
       "vrml": ""
     },

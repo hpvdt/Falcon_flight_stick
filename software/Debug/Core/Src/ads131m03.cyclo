@@ -1,0 +1,9 @@
+../Core/Src/ads131m03.c:22:13:adc_dbg	3
+../Core/Src/ads131m03.c:45:6:ADS131M03_Reset	1
+../Core/Src/ads131m03.c:56:13:spi_xfer	26
+../Core/Src/ads131m03.c:79:5:ADS131M03_Init	2
+../Core/Src/ads131m03.c:91:5:ADS131M03_WaitDRDY	4
+../Core/Src/ads131m03.c:109:13:build_read_cmd	1
+../Core/Src/ads131m03.c:120:16:parse24	2
+../Core/Src/ads131m03.c:128:9:ADS131M03_ReadID	1
+../Core/Src/ads131m03.c:146:5:ADS131M03_ReadChannels	4

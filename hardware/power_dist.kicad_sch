@@ -2322,6 +2322,22 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "LARGE FOOTPRINT/ CURRENT RATING"
+		(exclude_from_sim no)
+		(at 133.604 51.054 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b2bbd97e-8ff6-41bc-9367-578ffc5c082d")
+	)
+	(junction
+		(at 130.81 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "030973fb-591f-4106-898f-3f5e015fb2eb")
+	)
 	(junction
 		(at 104.14 85.09)
 		(diameter 0)
@@ -2417,12 +2433,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "94a54947-2c7d-4953-993e-ff8b18852c09")
-	)
-	(junction
-		(at 124.46 58.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c0258cb7-3055-46e0-a645-ea255eb02e80")
 	)
 	(junction
 		(at 167.64 85.09)
@@ -2568,7 +2578,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 58.42) (xy 142.24 58.42)
+			(xy 127 58.42) (xy 130.81 58.42)
 		)
 		(stroke
 			(width 0)
@@ -2648,6 +2658,16 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 58.42) (xy 142.24 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e3198e1-1c1b-42c4-9e6f-8ccf5063c2d1")
+	)
+	(wire
+		(pts
 			(xy 66.04 78.74) (xy 66.04 85.09)
 		)
 		(stroke
@@ -2678,7 +2698,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 60.96) (xy 124.46 60.96)
+			(xy 116.84 60.96) (xy 130.81 60.96)
 		)
 		(stroke
 			(width 0)
@@ -2738,7 +2758,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 60.96) (xy 124.46 58.42)
+			(xy 130.81 60.96) (xy 130.81 58.42)
 		)
 		(stroke
 			(width 0)
@@ -2995,6 +3015,16 @@
 			(type default)
 		)
 		(uuid "caf80da3-bbe2-4687-af3c-c7c2c126877b")
+	)
+	(wire
+		(pts
+			(xy 119.38 58.42) (xy 116.84 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb1a5c85-6def-4591-8c6d-1e148b3db713")
 	)
 	(wire
 		(pts
@@ -3799,7 +3829,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 120.65 58.42 90)
+		(at 123.19 58.42 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3808,7 +3838,7 @@
 		(fields_autoplaced yes)
 		(uuid "5ea6e483-a9bd-4a5a-bbf5-fbc1f2a1e2c8")
 		(property "Reference" "L2"
-			(at 120.65 53.34 90)
+			(at 123.19 53.34 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3816,7 +3846,7 @@
 			)
 		)
 		(property "Value" "10uH"
-			(at 120.65 55.88 90)
+			(at 123.19 55.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3824,7 +3854,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
-			(at 120.65 58.42 0)
+			(at 123.19 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3833,7 +3863,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 120.65 58.42 0)
+			(at 123.19 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3842,7 +3872,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 120.65 58.42 0)
+			(at 123.19 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3851,7 +3881,7 @@
 			)
 		)
 		(property "LCSC" "C86083"
-			(at 120.65 58.42 90)
+			(at 123.19 58.42 90)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -1,0 +1,3 @@
+../Core/Src/sanity_test.c:31:6:log_msg	24	static
+../Core/Src/sanity_test.c:46:13:log_str	24	static
+../Core/Src/sanity_test.c:55:6:RunSanityTests	40	static

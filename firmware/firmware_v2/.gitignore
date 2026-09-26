@@ -1,0 +1,6 @@
+.pio/
+.vscode/.browse.cwt.json
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/ipch
+serial_log.txt

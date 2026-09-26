@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (12.3.rel1)
+# Toolchain: GNU Tools for STM32 (14.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -64,8 +64,8 @@ all: main-build
 main-build: falcon_sw.elf secondary-outputs
 
 # Tool invocations
-falcon_sw.elf falcon_sw.map: $(OBJS) $(USER_OBJS) C:\Users\ghosh\OneDrive\Documents\GitHub\Falcon_flight_stick\software\STM32F103CBUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "falcon_sw.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\ghosh\OneDrive\Documents\GitHub\Falcon_flight_stick\software\STM32F103CBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="falcon_sw.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+falcon_sw.elf falcon_sw.map: $(OBJS) $(USER_OBJS) C:\Users\ghosh\Documents\GitHub\Falcon_flight_stick\software\STM32F103CBUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "falcon_sw.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\ghosh\Documents\GitHub\Falcon_flight_stick\software\STM32F103CBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="falcon_sw.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
